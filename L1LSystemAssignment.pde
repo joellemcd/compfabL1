@@ -35,13 +35,14 @@ void setup() {
   // Initialize an L-System using 
   // a method in ExampleLSystemDesigns
   
-  // [TODO]: call your L-system design method below
-  // to create your l-system
-//lSys = initSquare();
-//lSys = initDesignOne(); //uncomment to run designOne
-//lSys = initDesignTwo(); //uncomment to run designTwo
-//lSys = initDesignThree(); //uncomment to run designThree
-
+  // [TODO]: call your L-system design method below to create your l-system
+  //lSys = initSquare(); //uncomment to run task two
+  //lSys = initDesignOne();//uncomment to run first design for task three
+  //lSys = initDesignTwo();//uncomment to run secind design for task three
+  //lSys = initDesignThree();//uncomment to run third design for task three
+  //lSys = initProbDesignOne();//uncomment to run extra credit task one
+  //lSys = initProbDesignTwo();//uncomment to run extra credit task two
+ 
   // Don't loop the draw function
   noLoop();
  
@@ -55,19 +56,18 @@ void draw() {
   
   // Reset the turtle position and angle
   resetTurtle();
-   t.penUp();
-  //t.goToPoint(650, 250); //point initialization for DesignOne, uncomment for design 1
-  // t.goToPoint(width/2, 890); //point initialization for DesignThree, uncomment for design 3
-   t.penDown();
+  t.penUp();
+  //t.goToPoint(650, 250); //point initialization for initDesignOne, uncomment before running
+  //t.goToPoint(width/2, height-10); //point initialization for initDesignThree, initProbDesignOne, and initProbDesignTwo, uncomment before running
+  t.penDown();
 
   // Reset the L-System's State
   lSys.reset();
   
-  // [TODO]: Iterate (simulate) the LSystem for numIterations 
-  // using its iterate() function
-for (int i=0; i<numIterations; i+=1){
-  lSys.iterate();
-}
+  // [TODO]: Iterate (simulate) the LSystem for numIterations using its iterate() function
+  for (int i=0; i<numIterations; i+=1){
+    lSys.iterate();
+  }
   
   // Draw the LSystem using the turtle 
   lSys.drawLSystem(t);
@@ -77,6 +77,7 @@ for (int i=0; i<numIterations; i+=1){
   
   // Print the LSystem's State - console gets a bit overwhelmed with iterations >5
   lSys.printState();
+  
 }
 
 void keyPressed() {
